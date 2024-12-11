@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct CountdownerApp: App {
     let persistenceController = PersistenceController.shared
-
+    let store: Store = Store()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(store)
         }
     }
 }
