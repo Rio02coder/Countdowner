@@ -10,16 +10,21 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+    @EnvironmentObject var store: Store
 
     var body: some View {
         NavigationView {
-            Text("Hello world")
+            VStack{
+                Text("Hello world")
+                Button("Add") {
+                    store.dispatch(action: AddCountdownAction(newCountdown: Countdown(name: "Math")))
+                }
+                Button("View") {
+                    print(store.state.countdowns)
+                    print(store.state.user)
+                }
                 .navigationTitle(Text("Welcome"))
+            }
         }
     }
 }
