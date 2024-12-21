@@ -23,9 +23,12 @@ struct CountdownerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(store)
+//            ContentView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                .environmentObject(store)
+            LoginView()
+                .applyDefaultBackground()
+                
         }
     }
 }
