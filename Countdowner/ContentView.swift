@@ -11,20 +11,28 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var store: Store
-
+    @StateObject var viewModel = AuthenticationViewModel()
     var body: some View {
-        NavigationView {
-            VStack{
-                Text("Hello world")
-                Button("Add") {
-                    store.dispatch(action: AddCountdownAction(newCountdown: Countdown(name: "Math")))
+        if(viewModel.user == nil) {
+            LoginView()
+                .environmentObject(viewModel)
+                .applyDefaultBackground()
+        } else {
+            NavigationView {
+                VStack{
+                    Text("Hello world")
+                    Button("Sign out") {
+                        viewModel.signOut()
+                    }
+                    Button("Add") {
+                        store.dispatch(action: AddCountdownAction(newCountdown: Countdown(name: "Math")))
+                    }
+                    Button("View") {
+                        print(store.state.countdowns)
+                    }
+                    .navigationTitle(Text("Welcome"))
                 }
-                Button("View") {
-                    print(store.state.countdowns)
-                    print(store.state.user)
-                }
-                .navigationTitle(Text("Welcome"))
-            }
+            }.applyDefaultBackground()
         }
     }
 }

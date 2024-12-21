@@ -7,6 +7,8 @@
 
 import SwiftUI
 import FirebaseCore
+import FirebaseAuth
+import GoogleSignIn
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -14,6 +16,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     FirebaseApp.configure()
     return true
   }
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance.handle(url)
+    }
+    
+//  func application(_ app: UIApplication,
+//                     open url: URL,
+//                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+//    return GIDSignIn.sharedInstance.handle(url)
+//  }
 }
 
 @main
@@ -23,12 +36,14 @@ struct CountdownerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-//            ContentView()
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(store)
+//            LoginView()
+//                .applyDefaultBackground()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
 //                .environmentObject(store)
-            LoginView()
-                .applyDefaultBackground()
-                
+//                .environmentObject(viewModel)
         }
     }
 }

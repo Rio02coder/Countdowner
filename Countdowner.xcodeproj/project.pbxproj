@@ -12,6 +12,8 @@
 		905AD17A2D160D82003961F4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 905AD1792D160D82003961F4 /* FirebaseDatabase */; };
 		905AD17C2D160D82003961F4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 905AD17B2D160D82003961F4 /* FirebaseFirestore */; };
 		905AD17E2D160D82003961F4 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 905AD17D2D160D82003961F4 /* FirebaseFunctions */; };
+		905AD1FB2D1724A4003961F4 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 905AD1FA2D1724A4003961F4 /* GoogleSignIn */; };
+		905AD1FD2D1724A4003961F4 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 905AD1FC2D1724A4003961F4 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +39,22 @@
 		90B161062D08A59E0044A417 /* CountdownerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		905AD1FF2D1725DD003961F4 /* Exceptions for "Countdowner" folder in "Countdowner" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 90B160E62D08A59D0044A417 /* Countdowner */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		90B160E92D08A59D0044A417 /* Countdowner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				905AD1FF2D1725DD003961F4 /* Exceptions for "Countdowner" folder in "Countdowner" target */,
+			);
 			path = Countdowner;
 			sourceTree = "<group>";
 		};
@@ -62,9 +77,11 @@
 			files = (
 				905AD17A2D160D82003961F4 /* FirebaseDatabase in Frameworks */,
 				905AD17C2D160D82003961F4 /* FirebaseFirestore in Frameworks */,
+				905AD1FD2D1724A4003961F4 /* GoogleSignInSwift in Frameworks */,
 				905AD17E2D160D82003961F4 /* FirebaseFunctions in Frameworks */,
 				905AD1782D160D82003961F4 /* FirebaseCore in Frameworks */,
 				905AD1762D160D82003961F4 /* FirebaseAuth in Frameworks */,
+				905AD1FB2D1724A4003961F4 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +147,8 @@
 				905AD1792D160D82003961F4 /* FirebaseDatabase */,
 				905AD17B2D160D82003961F4 /* FirebaseFirestore */,
 				905AD17D2D160D82003961F4 /* FirebaseFunctions */,
+				905AD1FA2D1724A4003961F4 /* GoogleSignIn */,
+				905AD1FC2D1724A4003961F4 /* GoogleSignInSwift */,
 			);
 			productName = Countdowner;
 			productReference = 90B160E72D08A59D0044A417 /* Countdowner.app */;
@@ -215,6 +234,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				905AD1742D160D82003961F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				905AD1F92D1724A4003961F4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 90B160E82D08A59D0044A417 /* Products */;
@@ -420,6 +440,7 @@
 				DEVELOPMENT_TEAM = D3QH5PB9TB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Countdowner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -449,6 +470,7 @@
 				DEVELOPMENT_TEAM = D3QH5PB9TB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Countdowner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -589,6 +611,14 @@
 				minimumVersion = 11.6.0;
 			};
 		};
+		905AD1F92D1724A4003961F4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -616,6 +646,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 905AD1742D160D82003961F4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFunctions;
+		};
+		905AD1FA2D1724A4003961F4 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 905AD1F92D1724A4003961F4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		905AD1FC2D1724A4003961F4 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 905AD1F92D1724A4003961F4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginSheet: View {
     let closeAction: () -> Void
     @State private var email: String = ""
+    @State private var showError: Bool = false
     var body: some View {
         ZStack{
             Image("EmailLoginLinkLogo")
@@ -23,9 +24,19 @@ struct LoginSheet: View {
                                 .background(Color(.white))
                                 .cornerRadius(18)
                                 .padding(.horizontal)
+                                .autocapitalization(.none)
+                                .keyboardType(.emailAddress)
+                                .onChange(of: email) {
+                                    showError = false
+                                }
+                ErrorText(showError: showError, label: "Enter a valid email address")
                 Spacer()
                 Button("Send Link") {
-                    closeAction()
+                    if(loginWithEmailValidator(email: email)) {
+                        closeAction()
+                    } else {
+                        showError = true
+                    }
                 }
             }
         }
