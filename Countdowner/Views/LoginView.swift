@@ -9,14 +9,19 @@ import SwiftUI
 
 struct LoginView: View {
     @State private var isShowingSheet = false
+    @Environment(\.verticalSizeClass) var verticalSizeClass;
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass;
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var viewModel: AuthenticationViewModel
+    var isIpadLandscape: Bool {
+        horizontalSizeClass == .regular && verticalSizeClass == .regular
+    }
     var body: some View {
         VStack {
             Text(APP_NAME).applyCountdownTextStyle()
             Image("CountdownerLogo")
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: isIpadLandscape ? .fit : .fill)
             Spacer()
             Button(action: {
                 Task {
@@ -27,7 +32,7 @@ struct LoginView: View {
                 }) {
                   SignInWithGoogleButton()
                 }
-    }
+        }
   }
 }
 

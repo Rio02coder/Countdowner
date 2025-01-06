@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct AddCountdownSheet: View {
+    var closeHandler: () -> Void
+    var uid: String;
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            AddCountdownForm(closeHandler: closeHandler, uid: uid)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .padding(.top)
+        .background(Color(red: 37/255, green: 38/255, blue: 38/255))
     }
 }
 
 #Preview {
-    AddCountdownSheet()
+    AddCountdownSheet(closeHandler: {
+        print("Sheet closed")
+    }, uid: "shm")
 }

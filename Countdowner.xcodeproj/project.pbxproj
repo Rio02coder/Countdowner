@@ -14,9 +14,19 @@
 		905AD17E2D160D82003961F4 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 905AD17D2D160D82003961F4 /* FirebaseFunctions */; };
 		905AD1FB2D1724A4003961F4 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 905AD1FA2D1724A4003961F4 /* GoogleSignIn */; };
 		905AD1FD2D1724A4003961F4 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 905AD1FC2D1724A4003961F4 /* GoogleSignInSwift */; };
+		90A5473A2D2B1A8C008DDB49 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A547392D2B1A8C008DDB49 /* WidgetKit.framework */; };
+		90A5473C2D2B1A8C008DDB49 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A5473B2D2B1A8C008DDB49 /* SwiftUI.framework */; };
+		90A5474D2D2B1A8E008DDB49 /* CountdownerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 90A547372D2B1A8C008DDB49 /* CountdownerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		90A5474B2D2B1A8E008DDB49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 90B160DF2D08A59D0044A417 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 90A547362D2B1A8C008DDB49;
+			remoteInfo = CountdownerWidgetExtension;
+		};
 		90B160FD2D08A59E0044A417 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 90B160DF2D08A59D0044A417 /* Project object */;
@@ -33,7 +43,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		90A5474E2D2B1A8E008DDB49 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				90A5474D2D2B1A8E008DDB49 /* CountdownerWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		90A547372D2B1A8C008DDB49 /* CountdownerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CountdownerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		90A547392D2B1A8C008DDB49 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		90A5473B2D2B1A8C008DDB49 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		90A5488A2D2B7E76008DDB49 /* CountdownerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CountdownerWidgetExtension.entitlements; sourceTree = "<group>"; };
 		90B160E72D08A59D0044A417 /* Countdowner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countdowner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B160FC2D08A59E0044A417 /* CountdownerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B161062D08A59E0044A417 /* CountdownerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountdownerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,9 +75,24 @@
 			);
 			target = 90B160E62D08A59D0044A417 /* Countdowner */;
 		};
+		90A547522D2B1A8E008DDB49 /* Exceptions for "CountdownerWidget" folder in "CountdownerWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 90A547362D2B1A8C008DDB49 /* CountdownerWidgetExtension */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		90A5473D2D2B1A8C008DDB49 /* CountdownerWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				90A547522D2B1A8E008DDB49 /* Exceptions for "CountdownerWidget" folder in "CountdownerWidgetExtension" target */,
+			);
+			path = CountdownerWidget;
+			sourceTree = "<group>";
+		};
 		90B160E92D08A59D0044A417 /* Countdowner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -71,6 +114,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		90A547342D2B1A8C008DDB49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90A5473C2D2B1A8C008DDB49 /* SwiftUI.framework in Frameworks */,
+				90A5473A2D2B1A8C008DDB49 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90B160E42D08A59D0044A417 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,12 +154,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90A547382D2B1A8C008DDB49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90A547392D2B1A8C008DDB49 /* WidgetKit.framework */,
+				90A5473B2D2B1A8C008DDB49 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		90B160DE2D08A59D0044A417 = {
 			isa = PBXGroup;
 			children = (
+				90A5488A2D2B7E76008DDB49 /* CountdownerWidgetExtension.entitlements */,
 				90B160E92D08A59D0044A417 /* Countdowner */,
 				90B160FF2D08A59E0044A417 /* CountdownerTests */,
 				90B161092D08A59E0044A417 /* CountdownerUITests */,
+				90A5473D2D2B1A8C008DDB49 /* CountdownerWidget */,
+				90A547382D2B1A8C008DDB49 /* Frameworks */,
 				90B160E82D08A59D0044A417 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -118,6 +182,7 @@
 				90B160E72D08A59D0044A417 /* Countdowner.app */,
 				90B160FC2D08A59E0044A417 /* CountdownerTests.xctest */,
 				90B161062D08A59E0044A417 /* CountdownerUITests.xctest */,
+				90A547372D2B1A8C008DDB49 /* CountdownerWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +190,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		90A547362D2B1A8C008DDB49 /* CountdownerWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90A547512D2B1A8E008DDB49 /* Build configuration list for PBXNativeTarget "CountdownerWidgetExtension" */;
+			buildPhases = (
+				90A547332D2B1A8C008DDB49 /* Sources */,
+				90A547342D2B1A8C008DDB49 /* Frameworks */,
+				90A547352D2B1A8C008DDB49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				90A5473D2D2B1A8C008DDB49 /* CountdownerWidget */,
+			);
+			name = CountdownerWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = CountdownerWidgetExtension;
+			productReference = 90A547372D2B1A8C008DDB49 /* CountdownerWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		90B160E62D08A59D0044A417 /* Countdowner */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90B161102D08A59E0044A417 /* Build configuration list for PBXNativeTarget "Countdowner" */;
@@ -132,10 +219,12 @@
 				90B160E32D08A59D0044A417 /* Sources */,
 				90B160E42D08A59D0044A417 /* Frameworks */,
 				90B160E52D08A59D0044A417 /* Resources */,
+				90A5474E2D2B1A8E008DDB49 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				90A5474C2D2B1A8E008DDB49 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				90B160E92D08A59D0044A417 /* Countdowner */,
@@ -207,9 +296,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1610;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
+					90A547362D2B1A8C008DDB49 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					90B160E62D08A59D0044A417 = {
 						CreatedOnToolsVersion = 16.1;
 					};
@@ -244,11 +336,19 @@
 				90B160E62D08A59D0044A417 /* Countdowner */,
 				90B160FB2D08A59E0044A417 /* CountdownerTests */,
 				90B161052D08A59E0044A417 /* CountdownerUITests */,
+				90A547362D2B1A8C008DDB49 /* CountdownerWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		90A547352D2B1A8C008DDB49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90B160E52D08A59D0044A417 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,6 +373,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		90A547332D2B1A8C008DDB49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90B160E32D08A59D0044A417 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,6 +404,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		90A5474C2D2B1A8E008DDB49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 90A547362D2B1A8C008DDB49 /* CountdownerWidgetExtension */;
+			targetProxy = 90A5474B2D2B1A8E008DDB49 /* PBXContainerItemProxy */;
+		};
 		90B160FE2D08A59E0044A417 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 90B160E62D08A59D0044A417 /* Countdowner */;
@@ -310,6 +422,64 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		90A5474F2D2B1A8E008DDB49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CountdownerWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D3QH5PB9TB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CountdownerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CountdownerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shmeelok.Countdowner.CountdownerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		90A547502D2B1A8E008DDB49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CountdownerWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D3QH5PB9TB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CountdownerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CountdownerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shmeelok.Countdowner.CountdownerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		90B1610E2D08A59E0044A417 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -434,6 +604,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Countdowner/Countdowner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Countdowner/Preview Content\"";
@@ -444,8 +615,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,6 +635,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Countdowner/Countdowner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Countdowner/Preview Content\"";
@@ -474,8 +646,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -564,6 +736,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		90A547512D2B1A8E008DDB49 /* Build configuration list for PBXNativeTarget "CountdownerWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90A5474F2D2B1A8E008DDB49 /* Debug */,
+				90A547502D2B1A8E008DDB49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		90B160E22D08A59D0044A417 /* Build configuration list for PBXProject "Countdowner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

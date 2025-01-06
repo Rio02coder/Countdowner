@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct AddCountdownButton: View {
+    @State private var showSheet: Bool = false
+    var uid: String;
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {
+            showSheet.toggle()
+        }) {
+            Image(systemName: "plus.circle.fill")
+                .foregroundColor(.white)
+        }.sheet(isPresented: $showSheet, content: {
+            AddCountdownSheet(closeHandler: {
+                showSheet = false
+            }, uid: uid)
+        })
     }
 }
 
 #Preview {
-    AddCountdownButton()
+    AddCountdownButton(uid: "sdj")
+        .applyDefaultBackground()
 }

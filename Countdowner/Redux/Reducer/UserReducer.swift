@@ -10,7 +10,7 @@ func userReducer(_ userState: UserState, _ userAction: UserActions) -> UserState
     switch userAction {
         case let userAction as AddUserAction:
             userState.user = userAction.newUser
-        case let userAction as DeleteUserAction:
+    case _ as DeleteUserAction:
             userState.user = nil
         default:
             break

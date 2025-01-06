@@ -4,10 +4,54 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Countdowner 1.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Countdowner.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>CountdownerWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Promises (Playground).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>90A547362D2B1A8C008DDB49</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90B160E62D08A59D0044A417</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90B160FB2D08A59E0044A417</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90B161052D08A59E0044A417</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -15,8 +15,8 @@ import FirebaseFirestore
 func getInitData(email: String?) -> [String: Any] {
     let emailString: String = (email != nil) ? email! : DEFAULT_EMAIL
     return [
-        "countdowns": [],
-        "displayEmail": emailString
+        COUNTDOWN_FIELD_NAME: [],
+        DISPLAY_EMAIL_FIELD_NAME: emailString
     ]
 }
 
@@ -55,6 +55,7 @@ func createUserWithUidAndEmail(uid: String, email: String?) async -> Bool {
     }
 }
 
+
 /**
  Function to create a user document, the user document does not already exist.
  This returns true in the case if the user already exists or a new user is created and
@@ -76,17 +77,21 @@ func createUserIfNotExists(uid: String, email: String?) async -> Bool {
  Function to get the value of a specific user field.
  Params: uid: String - The user id, fieldName: String - The user field
  */
-
-func getUserField(_ uid: String, _ fieldName: String) async {
+func getUserField(_ uid: String, _ fieldName: String) async throws -> Any {
     let db = Firestore.firestore()
+    
     do {
-        let userDoc = try await db.collection(USERS_DOCUMENT_NAME).document(uid).getDocument()
+        let userDoc = try await db.collection("users").document(uid).getDocument()
         if userDoc.exists {
-            let countdowns = userDoc.get(fieldName)
+            if let result = userDoc.get(fieldName) {
+                return result
+            } else {
+                throw FieldDoesNotExistError(fieldName: fieldName)
+            }
         } else {
-            
+            throw UserDoesNotExistError()
         }
     } catch {
-        
+        throw UnknownError()
     }
 }

@@ -88,7 +88,20 @@ extension AuthenticationViewModel {
       errorMessage = error.localizedDescription
     }
   }
+    
+    func deleteAccount() async -> Bool {
+        do {
+          try await user?.delete()
+          return true
+        }
+        catch {
+          errorMessage = error.localizedDescription
+          return false
+        }
+      }
 }
+
+
 
 enum AuthenticationError: Error {
   case tokenError(message: String)
@@ -116,8 +129,8 @@ extension AuthenticationViewModel {
         let accessToken = user.accessToken
         let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString,
                                                        accessToken: accessToken.tokenString)
-        try await Auth.auth().signIn(with: credential)
-        return true
+        let firebaseUser = try await Auth.auth().signIn(with: credential)
+        return await createUserIfNotExists(uid: firebaseUser.user.uid, email: firebaseUser.user.email)
       }
       catch {
         print(error.localizedDescription)

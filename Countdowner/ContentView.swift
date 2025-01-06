@@ -18,21 +18,8 @@ struct ContentView: View {
                 .environmentObject(viewModel)
                 .applyDefaultBackground()
         } else {
-            NavigationView {
-                VStack{
-                    Text("Hello world")
-                    Button("Sign out") {
-                        viewModel.signOut()
-                    }
-                    Button("Add") {
-                        store.dispatch(action: AddCountdownAction(newCountdown: Countdown(name: "Math")))
-                    }
-                    Button("View") {
-                        print(store.state.countdowns)
-                    }
-                    .navigationTitle(Text("Welcome"))
-                }
-            }.applyDefaultBackground()
+            HomeView()
+                .environmentObject(viewModel)
         }
     }
 }
